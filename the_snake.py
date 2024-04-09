@@ -244,7 +244,7 @@ def main():
             snake.eat_apple(apple.position)
             apple.generate_new_apple()
             while True:  # Порядочные яблоки на змейках не вырастают.
-                if apple.position in snake.positions: 
+                if apple.position in snake.positions:
                     apple.generate_new_apple()
                 else:
                     break
