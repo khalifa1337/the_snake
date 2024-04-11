@@ -96,8 +96,8 @@ class Apple(GameObject):
                  position: Optional[tuple[int, int]] = None,
                  body_color: tuple[int, int, int] = APPLE_COLOR
                  ) -> None:
-        self.body_color = body_color
-        self.position = self.randomize_position()
+        super().__init__(position=self.randomize_position(),
+                         body_color=body_color)
 
     @staticmethod
     def randomize_position() -> tuple[int, int]:
@@ -140,7 +140,8 @@ class Snake(GameObject):
                  position: tuple[int, int] = DEFAULT_POSITION,
                  body_color: tuple[int, int, int] = SNAKE_COLOR
                  ) -> None:
-        self.position = position
+        super().__init__(position=position,
+                         body_color=body_color)
         self.reset(body_color=body_color)
 
     def update_direction(self, next_direction) -> None:
